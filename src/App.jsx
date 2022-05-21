@@ -1,6 +1,7 @@
 import React from "react";
 
-import Ticker from "./Ticker";
+// import Ticker from "./class-ticker/Ticker";
+import Ticker from "./functional-ticker/Ticker";
 
 class App extends React.Component {
   constructor(props) {
