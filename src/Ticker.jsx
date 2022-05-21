@@ -1,13 +1,6 @@
 import React from "react";
 
 class Ticker extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.props = props;
-    this.state = {};
-  }
-
   componentDidMount(...args) {
     console.log("did mount", ...args);
   }
@@ -22,6 +15,9 @@ class Ticker extends React.Component {
 
   render() {
     const { tick } = this.props;
+
+    console.log("render Ticker");
+
     return (
       <div className="px-5 py-2 shadow-xl rounded-lg bg-white">
         <strong>{tick}</strong>
@@ -30,4 +26,7 @@ class Ticker extends React.Component {
   }
 }
 
-export default Ticker;
+export default React.memo(
+  Ticker,
+  (prevProps, nextProps) => prevProps.tick === nextProps.tick
+);

@@ -24,7 +24,8 @@ class App extends React.Component {
 
     return (
       <div className="h-screen flex justify-center items-center bg-purple-50">
-        {tick % 5 ? <Ticker tick={tick} /> : null}
+        {/* {tick % 5 ? <Ticker tick={tick} /> : null} */}
+        <Ticker tick={2} />
       </div>
     );
   }
